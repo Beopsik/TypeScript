@@ -1,22 +1,5 @@
-function error(message: string): never {
-    throw new Error(message);
-}
+let someValue: any = "this is a string";
 
-function fail() {
-    return error("Something failed");
-}
+let strLength: number = (someValue as string).length;
 
-function infiniteLoop(): never {
-    while (true) {
-    }
-}
-
-function $(selector: string) {
-    if (selector === 'ID')
-        return selector;
-
-    return fail();
-}
-
-let id = $('ID');
-console.log(id);
+console.log(strLength);
