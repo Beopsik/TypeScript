@@ -1,7 +1,17 @@
-var Color;
-(function (Color) {
-    Color[Color["Red"] = 0] = "Red";
-    Color[Color["Green"] = 1] = "Green";
-    Color[Color["Blue"] = 2] = "Blue";
-})(Color || (Color = {}));
-var c = Color.Green;
+function error(message) {
+    throw new Error(message);
+}
+function fail() {
+    return error("Something failed");
+}
+function infiniteLoop() {
+    while (true) {
+    }
+}
+function $(selector) {
+    if (selector === 'ID')
+        return selector;
+    return fail();
+}
+var id = $('ID');
+console.log(id);
