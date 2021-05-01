@@ -1,19 +1,9 @@
-interface SquareConfig {
-    color?: string;
-    width?: number;
-    [propName: string]: any
+class Control {
+    private state: any;
 }
-
-function createSquare(config: SquareConfig): { color: string; area: number } {
-    let newSquare = { color: "white", area: 100 };
-    if (config.color) {
-        newSquare.color = config.color;
-    }
-    if (config.width) {
-        newSquare.area = config.width * config.width;
-    }
-    return newSquare;
+interface SelectableControl extends Control {
+    select(): void;
 }
-
-let mySquare = createSquare({ colour: "black", width: 70 });
-console.log(mySquare);
+class Button extends Control implements SelectableControl {
+    select() { };
+}
